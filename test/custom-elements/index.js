@@ -45,7 +45,7 @@ describe('custom-elements', function() {
 	before(async () => {
 		svelte = loadSvelte();
 		server = await create_server();
-		browser = await puppeteer.launch();
+		browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 	});
 
 	after(async () => {
